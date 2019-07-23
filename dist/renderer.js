@@ -7,8 +7,11 @@ class Render {
         const template = Handlebars.compile(source);
         const newHTML = template({data});
         $('.unsplashBox').append(newHTML);
+
+        
     }
 
+    
 
     renderDB(data) {
         $('.picturs').empty()

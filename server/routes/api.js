@@ -27,3 +27,19 @@ router.get('/pics/:keyWord', function (req, resp) {
 
 
   module.exports = router
+
+
+
+
+//   /For each city code, push Flight request to array
+    const requestArr  = [];
+       cityCodes.forEach(c => cityCodesReq.push(request(
+           `https://api.skypicker.com/flights?flyFrom=${c.airportCode}&date_from=${reqParams.fromDate}&date_to=${reqParams.toDate}&price_to=${reqParams.maxPrice}&max_fly_duration=${reqParams.dur}`
+       )))
+
+       const cityCodesRes = await Promise.all(cityCodesReq);
+
+       //Set all the results to airportsResults
+       cityCodesRes.forEach(r => {
+           airportsResults.push(JSON.parse(r).data);
+       })
