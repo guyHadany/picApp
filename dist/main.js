@@ -40,7 +40,7 @@ $(".picturs").on("click", ".save",  function () {
 
 
 $(".favorite").on("click", function () {
-    tempmanager.getPicFromDB()
+    tempmanager.getPicsFromDB()
     renderer.renderDB(tempmanager.savedPics)
 
 })

@@ -23,9 +23,9 @@
                 </div>
         </div>
         <div class="picturs">
-            <div class="unsplash">Unsplash</div>
-            <div class="pexels">Pexels</div>
-            <div class="pixabay">Pixabay</div>
+            <div class="unsplash">Unsplash<div class="photos"></div></div>
+            <div class="pexels">Pexels<div class="photos"></div></div>
+            <div class="pixabay">Pixabay<div class="photos"></div></div>
         </div>
     </div>
 
@@ -35,7 +35,7 @@
     <script id="unsplash-template" type="text/x-handlebars-template">
         {{#each data}}
          <div class="picBox">
-             <div class="pic"><img src="{{smallUrl}}" alt="picture" height="200px" width="200px"></div>
+             <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px"></div>
              <div class="likes">{{likes}}</div>
              <div class="credit">{{photographer}}</div>
              <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
