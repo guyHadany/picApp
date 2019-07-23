@@ -4,13 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>picApp</title>
+    <title>PicApp</title>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Darker+Grotesque|Knewave|Source+Sans+Pro&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/14a3d3d526.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
 
+
+    <div id="container">
+        <div class="header"> 
+            <div><i class="fas fa-heart"></i></div>
+            <div class="title">PicApp</div>
+            <div class="inputPart">
+                <input class= "input" type="text" id="myInput" placeholder="Search Picturs...">
+                    <span id="myBtn" class="searchButton"><i class="fas fa-search"></i> </span>
+                </div>
+        </div>
+        <div class="picturs">
+            <div class="unsplash">Unsplash</div>
+            <div class="pexels">Pexels</div>
+            <div class="pixabay">Pixabay</div>
+        </div>
+    </div>
+
+
+
+
+    <script id="unsplash-template" type="text/x-handlebars-template">
+        {{#each data}}
+         <div class="picBox">
+             <div class="pic"><img src="{{smallUrl}}" alt="picture" height="200px" width="200px"></div>
+             <div class="likes">{{likes}}</div>
+             <div class="credit">{{photographer}}</div>
+             <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
+            
+                 {{#if isSaved}}
+                 <div class="remove"><i class="fas fa-heart"></i></div>
+                 {{else}}
+                <div class="saver"><i class="far fa-heart"></i></div>
+                {{/if}}  
+            </div>
+        </div>
+       {{/each}}
+    </script>
 
 
 
