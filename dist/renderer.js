@@ -1,12 +1,12 @@
 class Render {
 
     renderData(data) {
-        $('.photos').empty()
+        $('.unsplashBox').empty()
 
         const source = $('#unsplash-template').html();
         const template = Handlebars.compile(source);
         const newHTML = template({data});
-        $('.photos').append(newHTML);
+        $('.unsplashBox').append(newHTML);
     }
 
 
