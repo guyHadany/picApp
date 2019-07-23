@@ -23,9 +23,9 @@
                 </div>
         </div>
         <div class="picturs">
-            <div class="unsplash">Unsplash<div class="photos"></div></div>
-            <div class="pexels">Pexels<div class="photos"></div></div>
-            <div class="pixabay">Pixabay<div class="photos"></div></div>
+            <div class="unsplash">Unsplash<div class="unsplashBox"></div></div>
+            <div class="pexels">Pexels<div class="pexelsBox"></div></div>
+            <div class="pixabay">Pixabay<div class="pixabayBox"></div></div>
         </div>
     </div>
 
@@ -35,17 +35,18 @@
     <script id="unsplash-template" type="text/x-handlebars-template">
         {{#each data}}
          <div class="picBox">
-             <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px"></div>
-             <div class="likes">{{likes}}</div>
-             <div class="credit">{{photographer}}</div>
-             <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
-            
-                 {{#if isSaved}}
-                 <div class="remove"><i class="fas fa-heart"></i></div>
-                 {{else}}
-                <div class="saver"><i class="far fa-heart"></i></div>
-                {{/if}}  
-            </div>
+             <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
+                <div class="text-block">
+                <div class="likes">{{likes}}</div>
+                <div class="credit">{{photographer}}</div>
+                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
+                    {{#if isSaved}}
+                    <div class="remove"><i class="fas fa-heart"></i></div>
+                    {{else}}
+                    <div class="saver"><i class="far fa-heart"></i></div>
+                    {{/if}} 
+                </div>
+            </div> 
         </div>
        {{/each}}
     </script>
