@@ -82,8 +82,22 @@ grid-area: u;
 .pic .content {
   position: absolute; /* Position the background text */
   bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
   color: #f1f1f1; /* Grey text */
   width: 87%;
   margin: 25px;
+}
+
+.fa-heart {
+    font-size: 30px
+}
+
+.fa-arrow-circle-down{
+    font-size: 30px;
+    color: rgb(74, 221, 74)
+}
+
+.content2{
+    display: flex;
+    height: 58px;
 }
