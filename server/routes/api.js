@@ -65,6 +65,8 @@ router.get('/pics/:keyWord', function (req, res) {
             }
         }
         )
+       
+        
         res.send([unsplashPics, pixabayPics, pexelsPics])
     })
 })
