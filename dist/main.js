@@ -13,6 +13,10 @@ let searchPic =  async function(keyword) {
  
  // input click 
  $(".searchButton").on("click", async function () {
+     $(".unsplash").css("display", "block")
+     $(".pexels").css("display", "block")
+     $(".pixabay").css("display", "block")
+
      let keyword = $(".input").val();
      await searchPic(keyword)
      $(".input").val('')

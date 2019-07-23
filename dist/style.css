@@ -55,14 +55,17 @@ body {
 
 .unsplash{
 grid-area: u;
+display: none;
 }
 
 .pexels{
     grid-area: p;
+    display: none;
 }
 
 .pixabay{
     grid-area: b;
+    display: none;
 }
 
 .picturs{
