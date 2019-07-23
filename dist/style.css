@@ -80,12 +80,13 @@ grid-area: u;
 }
 
 .pic .content {
-  position: absolute; /* Position the background text */
-  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
-  color: #f1f1f1; /* Grey text */
-  width: 87%;
-  margin: 25px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #f1f1f1;
+    width: 87%;
+    margin: 21px;
+    margin-bottom: 24px;
 }
 
 .fa-heart {
@@ -99,5 +100,14 @@ grid-area: u;
 
 .content2{
     display: flex;
-    height: 58px;
+    height: 56px;
+}
+
+.save {
+    margin-top: 21px;
+    margin-right: 5px;
+}
+
+.link{
+    margin-top: 21px;
 }

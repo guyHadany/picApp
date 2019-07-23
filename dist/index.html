@@ -38,9 +38,9 @@
              <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
                 <div class="content">
                 <div class="content2">   
-                <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>
-                <div class="credit">Credit: {{photographer}}</div>
-                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
+                <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>&nbsp;
+                <div class="credit">Credit: {{photographer}}</div>&nbsp;
+                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>&nbsp;
                     {{#if isSaved}}
                     <div class="remove"><i class="fas fa-heart"></i></div>
                     {{else}}
@@ -52,6 +52,9 @@
         </div>
        {{/each}}
     </script>
+
+
+
 
 
     <script id="favorite-template" type="text/x-handlebars-template">
