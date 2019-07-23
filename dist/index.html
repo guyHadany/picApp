@@ -33,7 +33,7 @@
 
 
     <script id="unsplash-template" type="text/x-handlebars-template">
-        {{#each unsplash}}
+        {{#each website}}
          <div class="picBox" id="{{apiId}}">
              <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
                 <div class="content">
@@ -54,62 +54,8 @@
     </script>
 
 
-    <script id="pixabay-template" type="text/x-handlebars-template">
-        {{#each pixabay}}
-         <div class="picBox" id="{{apiId}}">
-             <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
-                <div class="content">
-                <div class="content2">  
-                <div class="credit">Credit: {{photographer}}</div>&nbsp; 
-                <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>&nbsp;
-                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>&nbsp;
-                    {{#if isSaved}}
-                    <div class="remove"><i class="fas fa-heart"></i></div>&nbsp;
-                    {{else}}
-                    <div class="save"><i class="far fa-heart"></i></div>&nbsp;
-                    {{/if}}
-                </div>
-                </div>
-            </div> 
-        </div>
-       {{/each}}
-    </script>
 
     
-    <script id="pexels-template" type="text/x-handlebars-template">
-        {{#each pexels}}
-         <div class="picBox" id="{{apiId}}">
-             <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
-                <div class="content">
-                <div class="content2">  
-                <div class="credit">Credit: {{photographer}}</div>&nbsp; 
-                <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>&nbsp;
-                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>&nbsp;
-                    {{#if isSaved}}
-                    <div class="remove"><i class="fas fa-heart"></i></div>&nbsp;
-                    {{else}}
-                    <div class="save"><i class="far fa-heart"></i></div>&nbsp;
-                    {{/if}}
-                </div>
-                </div>
-            </div> 
-        </div>
-       {{/each}}
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script id="favorite-template" type="text/x-handlebars-template">
         {{#each data}}
          <div class="picBox">

@@ -21,7 +21,8 @@ let searchPic =  async function(keyword) {
 
 //save click
 $(".picturs").on("click", ".save",  function () {
-    let picId = $(this).closest(".picBox").find("#id").attr()
+    let picId = $(this).closest(".picBox").attr("id")
+    console.log(picId);
     picmanager.savePic(picId)
 
 
@@ -30,7 +31,7 @@ $(".picturs").on("click", ".save",  function () {
 
  //clivc delete from DB
  $(".picturs").on("click", ".remove",  function () {
-    let picId = $(this).closest(".picBox").find("#id").attr()
+    let picId = $(this).closest(".picBox").attr("id")
     tempmanager.removePic(picId)
 
 })
