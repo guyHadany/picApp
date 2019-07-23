@@ -29,7 +29,7 @@ $(".picturs").on("click", ".save",  function () {
 
 
  //clivc delete from DB
- $(".picturs").on("click", ".save",  function () {
+ $(".picturs").on("click", ".remove",  function () {
     let picId = $(this).closest(".picBox").find("#id").attr()
     tempmanager.removePic(picId)
 

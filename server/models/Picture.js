@@ -10,10 +10,10 @@ const PictureSchema = new Schema(
         likes: Number,
         webURL: String,
         photographer: String,
-        collection: String,
-        isSaved: Boolean,
+        project: String,
+        isSaved: Boolean
     }
 )
 
-const Picture = mongoose.model("Picture", PictureSchema)
+const Picture = mongoose.model("Photo", PictureSchema)
 module.exports = Picture

@@ -34,16 +34,16 @@
 
     <script id="unsplash-template" type="text/x-handlebars-template">
         {{#each data}}
-         <div class="picBox">
+         <div class="picBox" id="{{apiId}}">
              <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
-                <div class="text-block">
+                <div class="content">
                 <div class="likes">{{likes}}</div>
                 <div class="credit">{{photographer}}</div>
                 <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
                     {{#if isSaved}}
                     <div class="remove"><i class="fas fa-heart"></i></div>
                     {{else}}
-                    <div class="saver"><i class="far fa-heart"></i></div>
+                    <div class="save"><i class="far fa-heart"></i></div>
                     {{/if}} 
                 </div>
             </div> 
