@@ -16,7 +16,10 @@ router.get('/pics/:keyWord', function (req, resp) {
         likes: a.likes,
         webURL: a.links.html,
         photographer: a.user.name,
-        project: null}})
+        project: null,
+        isSaved: false
+    
+    }})
    
     resp.send(unSplashArrey)
     }) 
