@@ -8,8 +8,10 @@ class PicManager {
     }
     //Passes a keyword to the pics GET routh and expects some picsObjects to push into the unsplashPics array
     async getPics(keyWord) {
-        let unspleshPicsData = await $.get(`/pics/${keyWord}`)
-        this.unsplashPics = unspleshPicsData // this.unsplashPics.push(...unspleshPicsData)
+        let ThreeApiArrey = await $.get(`/pics/${keyWord}`)
+        this.unsplashPics = ThreeApiArrey[0]
+        this.pixabayPics = ThreeApiArrey[1] // this.unsplashPics.push(...unspleshPicsData)
+        this.pexelsPics = ThreeApiArrey[2]
     }
     //Loop trough unsplashPics array to match id's (with the one you pressed) add passes the id as an argument to the pic POST routh to be saved in the DB 
     async savePic(picId) {
