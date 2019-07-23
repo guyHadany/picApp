@@ -1,25 +1,25 @@
 class PicManager {
     constructor() {
-        this.unspleshPics = []
+        this.unsplashPics = []
         this.pexelsPics = []
         this.pixabayPics = []
 
         this.savedPics = []
     }
-    //Passes a keyword to the pics GET routh and expects some picsObjects to push into the unspleshPics array
+    //Passes a keyword to the pics GET routh and expects some picsObjects to push into the unsplashPics array
     async getPics(keyWord) {
         let unspleshPicsData = await $.get(`/pics/${keyWord}`)
-        this.unspleshPics = unspleshPicsData // this.unspleshPics.push(...unspleshPicsData)
+        this.unsplashPics = unspleshPicsData // this.unsplashPics.push(...unspleshPicsData)
     }
-    //Loop trough unspleshPics array to match id's (with the one you pressed) add passes the id as an argument to the pic POST routh to be saved in the DB 
+    //Loop trough unsplashPics array to match id's (with the one you pressed) add passes the id as an argument to the pic POST routh to be saved in the DB 
     async savePic(picId) {
-        const picInfo = this.unspleshPics.find(p => p.apiId == picId)
+        const picInfo = this.unsplashPics.find(p => p.apiId == picId)
         await $.post(`/pic`, picInfo)
     }
   // makes a GET request to the DBpics routh to get the saved pics from the DB - fills savedPics array & clear all the other arrays 
     async getPicsFromDB() {
         let PicsFromDB = await $.get(`/DBpics`)
-        this.unspleshPics = []
+        this.unsplashPics = []
         this.pexelsPics = []
         this.pixabayPics = []
         this.savedPics = PicsFromDB
