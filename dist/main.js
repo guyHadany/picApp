@@ -44,9 +44,10 @@ $(".popUp").on("click", ".saveProject", async function () {
 
 
 
-$(".favorite").on("click", function () {
-    //  await picmanager.getPicsFromDB()
-    renderer.renderPName(picmanager.getProjectName())
+$(".favorite").on("click", async function () {
+    let projectsNames = await picmanager.getProjectName()
+
+    renderer.renderPName(projectsNames)
 
 })
 

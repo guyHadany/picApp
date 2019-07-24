@@ -290,7 +290,12 @@ h2 {
 
 
 .projectAlbum{
-    height: 30px;
-    width: 30px;
-    background-color: red
+    width: 30.4vw;
+    height: 200px;
+    margin: 1vh;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), #009688);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }

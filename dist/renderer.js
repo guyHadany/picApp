@@ -27,19 +27,21 @@ class Render {
 
 
     renderPName(projectsNames) {
+        $('.projectAlbum').remove()
         $('.unsplashBox').empty()
         $('.pexelsBox').empty()
         $('.pixabayBox').empty()
-
+    
         $(".unsplash").css("display", "none")
         $(".pexels").css("display", "none")
         $(".pixabay").css("display", "none")
         
+        console.log(projectsNames);
         
         const source3 = $('#favorite-template').html();
         const template3 = Handlebars.compile(source3);
         const newHTML3 = template3({projectsNames});
-        $('.pictures').append(newHTML3);
+        $('.picturs').append(newHTML3);
     }
 
 
