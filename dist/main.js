@@ -14,6 +14,7 @@ let searchPic =  async function(keyword) {
  
  // input click 
  $(".searchButton").on("click", async function () {
+    $(".projectName").empty()
      $(".unsplash").css("display", "block")
      $(".pexels").css("display", "block")
      $(".pixabay").css("display", "block")
@@ -69,6 +70,7 @@ $(".popUp").on("click", ".saveProject", async function () {
 
 
 $(".favorite").on("click", async function () {
+    $(".projectName").empty()
     let projectsNames = await picmanager.getProjectName()
     renderer.renderPName(projectsNames)
 })
@@ -78,6 +80,7 @@ $(".picturs").on("click", ".projectAlbum", async function () {
     let projectName = $(this).closest(".projectAlbum").text()
     let pictures = await picmanager.getProjectPics(projectName)
     renderer.renderProject(pictures)
+    $(".projectName").prepend(`<span>${projectName}</span>`)
 })
 
 
