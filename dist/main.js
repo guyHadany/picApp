@@ -26,8 +26,10 @@ let searchPic =  async function(keyword) {
 //save click
 $(".picturs").on("click", ".save",  function () {
     let picId = $(this).closest(".picBox").attr("id")
-    // console.log(picId);
-    picmanager.savePic(picId)
+    let projectName = "jojo"
+    picmanager.savePic(picId, projectName)
+
+
 
 
  });
