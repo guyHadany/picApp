@@ -18,7 +18,6 @@ let searchPic =  async function(keyword) {
      $(".unsplash").css("display", "block")
      $(".pexels").css("display", "block")
      $(".pixabay").css("display", "block")
-
      let keyword = $(".input").val();
      await searchPic(keyword)
      $(".input").val('')
@@ -32,6 +31,8 @@ $(".popUp").on("click", ".saveProject", async function () {
     await picmanager.savePic(picId, projectName)
     let namesArr = await picmanager.getProjectName()
     renderer.renderPopup(namesArr)
+    $(".inputpop").remove()
+    // $("popUp-input").empty()
 
  });
 
@@ -127,10 +128,9 @@ $(".popUp").on("click", ".close",  function () {
 
 
 $(".popUp").on("click", ".creatPro",  function () {
-    // $("inputpop").remove()
-    // $("popUp-input").empty()
-    
-    $(".popUp-input").append("<div class='inputpop'><input class='inputpopup w3-hover-blue' placeholder='Name your project' type='text'><button class='btn saveProject'>click</button></div>");
+    $(".inputpop").remove()
+    $(".popUp-input").empty()
+    $(".popUp-input").append("<div class='inputpop'><input class='inputpopup' placeholder='Name your project' type='text'><button class='btn saveProject'>Save</button></div>");
 })
 
 

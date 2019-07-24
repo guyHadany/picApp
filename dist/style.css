@@ -38,7 +38,7 @@ body {
     font-weight: bold
 }
 .title{
-    font-size: 6vw;
+    font-size: 5vw;
     text-align: center;
     font-family: 'Nanum Brush Script', cursive;
     display: inline;
@@ -54,7 +54,7 @@ body {
 
 .input {
     height: 3vw;
-    width: 40%;
+    width: 46%;
     font-size: 2vw;
     background-color: rgba(250, 250, 250, 0.2);
     border-radius: 4vw;
@@ -109,9 +109,9 @@ body {
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
-    width: 93.1%;
-    margin-bottom: 1.8vh;
-    margin-left: 3.5%;
+    width: 30.4vw;
+    margin-bottom: 1.8%;
+    margin-left: 4%;
     overflow-x: hidden;
 }
 
@@ -141,12 +141,24 @@ body {
     margin-top: 2%;
     font-size: 1.7vw;
     margin-right: 18px;
-
 }
 
 .save:hover {
     color: rgb(18, 224, 180)
 }
+
+.remove{
+    margin-top: 2%;
+    font-size: 1.7vw;
+    margin-right: 18px;
+}
+
+.remove:hover{
+    color: rgb(18, 224, 180)
+}
+
+
+
 
 
 .link{
@@ -204,6 +216,7 @@ h2 {
     margin-right: 35px;
     margin-top: 31px;
     padding-bottom: 2px;
+    cursor: pointer;
 }
 
 .favorite:hover {
@@ -228,7 +241,7 @@ h2 {
     margin-bottom: 15px;
     font-size: 42px;
     color: white;
-    font-weight: bold
+    
 }
 
 
@@ -248,10 +261,11 @@ h2 {
     background-color: white;
     width: 43vw;
     position: fixed;
-    top: 18vh;
+    top: 15vh;
     left: 27vw;
     padding-bottom: 14px;
     border-radius: 28px;
+    
 }
 
 .projects{
@@ -285,6 +299,7 @@ h2 {
     padding-bottom: 2px;
     float: right;
     margin-bottom: 3%;
+    cursor: pointer;
 }
 
 .creatPro:hover{
@@ -317,6 +332,7 @@ h2 {
     justify-content: center;
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 24px;
+    cursor: pointer;
     
 }
 
@@ -334,6 +350,7 @@ h2 {
 .inputpop{
     margin: 20px;
     padding-left: 36px;
+    text-indent: 5px;
 }
 
 
@@ -348,6 +365,7 @@ h2 {
     border-radius: 10px;
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 40px;
+    cursor: pointer;
 }
 
 .projectAlbum:active {
@@ -361,25 +379,19 @@ h2 {
 
 
 
-
-
 .btn {
-    opacity: 0.8;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #2ba89c;
     color: white;
- 
-    border-radius: 0.7vh;
-    box-shadow: 0 0.5vh rgba(153, 153, 153, 0.459);
+    border-radius: 12px;
     text-align: center;
-    text-decoration: none;
     font-size: 100%;
-    border: 0.4vh solid black;
-    margin: 1.2vh;
+    border: 2px solid black;
+    margin-left: 4px;
   }
  
   .btn:hover {
-    background-color: green
+    background-color: #1d665f
   }
  
   .btn:active {
@@ -388,5 +400,18 @@ h2 {
   }
 
   .inputpopup{
-    border: 0.4vh solid black;
+    border: 2px solid black;
+    border-radius: 13px;
+ }
+
+ .fas {
+    cursor: pointer;
+ }
+
+ input{
+    cursor: pointer;
+ }
+
+ .projectName{
+     color: rgb(29, 28, 28)
  }
