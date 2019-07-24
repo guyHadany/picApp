@@ -47,6 +47,7 @@ class PicManager {
 
 
     async getProjectName() {
+        
       let names = await $.get('/projectsNames')
       console.log(names);
       
@@ -70,6 +71,12 @@ class PicManager {
         $.post(`/projects/${name}`, picInfo )
 
         
+    }
+
+
+    async getProjectPics(projectName){
+        let pictures = await $.get(`/project/${projectName}`)
+        return pictures
     }
 
 

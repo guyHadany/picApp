@@ -5,14 +5,10 @@ class Render {
         $('.pexelsBox').empty()
         $('.pixabayBox').empty()
 
-
-
         const source = $('#unsplash-template').html();
         const template = Handlebars.compile(source);
         const newHTML = template({website: unsplash});
         $('.unsplashBox').append(newHTML);
-
-    
 
         const source1 = $('#unsplash-template').html();
         const template1 = Handlebars.compile(source1);
@@ -27,20 +23,24 @@ class Render {
 
 
     renderPName(projectsNames) {
-        $('.projectAlbum').remove()
-        $('.unsplashBox').empty()
-        $('.pexelsBox').empty()
-        $('.pixabayBox').empty()
-    
+        $('.picBox').remove()
+
         $(".unsplash").css("display", "none")
         $(".pexels").css("display", "none")
         $(".pixabay").css("display", "none")
         
-        console.log(projectsNames);
-        
         const source3 = $('#favorite-template').html();
         const template3 = Handlebars.compile(source3);
         const newHTML3 = template3({projectsNames});
+        $('.picturs').append(newHTML3);
+    }
+
+    renderProject(pictures) {
+        $('.projectAlbum').remove()
+        
+        const source3 = $('#project-template').html();
+        const template3 = Handlebars.compile(source3);
+        const newHTML3 = template3({website: pictures});
         $('.picturs').append(newHTML3);
     }
 
