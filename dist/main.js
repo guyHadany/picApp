@@ -71,10 +71,14 @@ $(".popUp").on("click", ".saveProject", async function () {
 $(".favorite").on("click", async function () {
     let projectsNames = await picmanager.getProjectName()
     renderer.renderPName(projectsNames)
-
 })
 
 
+$(".picturs").on("click", ".projectAlbum", async function () {
+    let projectName = $(this).closest(".projectAlbum").text()
+    let pictures = await picmanager.getProjectPics(projectName)
+    renderer.renderProject(pictures)
+})
 
 
 
