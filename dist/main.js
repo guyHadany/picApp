@@ -61,9 +61,13 @@ $(".popUp").on("click", ".saveProject", async function () {
 
 
  //clivc delete from DB
- $(".picturs").on("click", ".remove",  function () {
+ $(".picturs").on("click", ".remove",  async function () {
     let picId = $(this).closest(".picBox").attr("id")
-    picmanager.removePic(picId)
+    let projectName = $(this).closest("#container").find(".Pname").text()
+    await picmanager.removePic(picId, projectName)
+    let pictures = await picmanager.getProjectPics(projectName)
+    renderer.renderProject(pictures)
+    // picmanager.removePic(picId)
 
 })
 
@@ -80,7 +84,7 @@ $(".picturs").on("click", ".projectAlbum", async function () {
     let projectName = $(this).closest(".projectAlbum").text()
     let pictures = await picmanager.getProjectPics(projectName)
     renderer.renderProject(pictures)
-    $(".projectName").prepend(`<span>${projectName}</span>`)
+    $(".projectName").prepend(`<span class="Pname">${projectName}</span>`)
 })
 
 
