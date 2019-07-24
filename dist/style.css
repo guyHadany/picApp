@@ -29,9 +29,16 @@ body {
     animation-name: slide-from-bottom;
     animation-duration: 2s;
 }
-
+.projectName{
+    text-align: center;
+    font-family: 'Darker Grotesque', sans-serif;
+    margin-bottom: 15px;
+    font-size: 42px;
+    color: white;
+    font-weight: bold
+}
 .title{
-    font-size: 4vw;
+    font-size: 6vw;
     text-align: center;
     font-family: 'Nanum Brush Script', cursive;
     display: inline;
@@ -47,7 +54,7 @@ body {
 
 .input {
     height: 3vw;
-    width: 70%;
+    width: 40%;
     font-size: 2vw;
     background-color: rgba(250, 250, 250, 0.2);
     border-radius: 4vw;
@@ -222,6 +229,7 @@ h2 {
     margin-bottom: 15px;
     font-size: 42px;
     color: white;
+    font-weight: bold
 }
 
 
