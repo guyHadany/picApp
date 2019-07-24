@@ -39,6 +39,7 @@ class Render {
 
     renderProject(pictures) {
         $('.projectAlbum').remove()
+        $('.picBox').remove()
         
         const source3 = $('#project-template').html();
         const template3 = Handlebars.compile(source3);

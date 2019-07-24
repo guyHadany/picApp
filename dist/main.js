@@ -14,6 +14,7 @@ let searchPic =  async function(keyword) {
  
  // input click 
  $(".searchButton").on("click", async function () {
+    $(".projectName").empty()
      $(".unsplash").css("display", "block")
      $(".pexels").css("display", "block")
      $(".pixabay").css("display", "block")
@@ -60,9 +61,12 @@ $(".popUp").on("click", ".saveProject", async function () {
 
 
  //clivc delete from DB
- $(".picturs").on("click", ".remove",  function () {
+ $(".picturs").on("click", ".remove",  async function () {
     let picId = $(this).closest(".picBox").attr("id")
-    console.log(picId)
+    let projectName = $(this).closest("#container").find(".Pname").text()
+    await picmanager.removePic(picId, projectName)
+    let pictures = await picmanager.getProjectPics(projectName)
+    renderer.renderProject(pictures)
     // picmanager.removePic(picId)
 
 })
@@ -70,6 +74,7 @@ $(".popUp").on("click", ".saveProject", async function () {
 
 
 $(".favorite").on("click", async function () {
+    $(".projectName").empty()
     let projectsNames = await picmanager.getProjectName()
     renderer.renderPName(projectsNames)
 })
@@ -79,6 +84,7 @@ $(".picturs").on("click", ".projectAlbum", async function () {
     let projectName = $(this).closest(".projectAlbum").text()
     let pictures = await picmanager.getProjectPics(projectName)
     renderer.renderProject(pictures)
+    $(".projectName").prepend(`<span class="Pname">${projectName}</span>`)
 })
 
 
