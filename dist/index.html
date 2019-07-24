@@ -38,7 +38,7 @@
 
 
 
-    <script id="unsplash-template" type="text/x-handlebars-template">
+    <script id="all-template" type="text/x-handlebars-template">
         {{#each website}}
          <div class="picBox" id="{{apiId}}">
              <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
@@ -46,7 +46,7 @@
                 <div class="content2">  
                 <div class="credit">Credit: {{photographer}}</div>
                 <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>
-                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
+                <div class="link"><a href={{webURL}} target="_blank" ><i class="fas fa-arrow-circle-down"></i></a></div>
                     {{#if isSaved}}
                     <div class="remove"><i class="fas fa-minus-circle"></i> </div>
                     {{else}}

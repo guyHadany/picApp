@@ -7,17 +7,17 @@ class Render {
         $('.projectAlbum').remove()
 
 
-        const source = $('#unsplash-template').html();
+        const source = $('#all-template').html();
         const template = Handlebars.compile(source);
         const newHTML = template({website: unsplash});
         $('.unsplashBox').append(newHTML);
 
-        const source1 = $('#unsplash-template').html();
+        const source1 = $('#all-template').html();
         const template1 = Handlebars.compile(source1);
         const newHTML1 = template1({website: pixabay});
         $('.pixabayBox').append(newHTML1);
 
-        const source2 = $('#unsplash-template').html();
+        const source2 = $('#all-template').html();
         const template2 = Handlebars.compile(source2);
         const newHTML2 = template2({website: pexels});
         $('.pexelsBox').append(newHTML2);

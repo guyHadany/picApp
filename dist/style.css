@@ -197,6 +197,7 @@ h2 {
     margin-right: 35px;
     margin-top: 31px;
     padding-bottom: 2px;
+    cursor: pointer;
 }
 
 .favorite:hover {
@@ -277,6 +278,7 @@ h2 {
     padding-bottom: 2px;
     float: right;
     margin-bottom: 3%;
+    cursor: pointer;
 }
 
 .creatPro:hover{
@@ -309,6 +311,7 @@ h2 {
     justify-content: center;
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 24px;
+    cursor: pointer;
     
 }
 
@@ -340,6 +343,7 @@ h2 {
     border-radius: 10px;
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 40px;
+    cursor: pointer;
 }
 
 .projectAlbum:active {
@@ -353,25 +357,19 @@ h2 {
 
 
 
-
-
 .btn {
-    opacity: 0.8;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #2ba89c;
     color: white;
- 
-    border-radius: 0.7vh;
-    box-shadow: 0 0.5vh rgba(153, 153, 153, 0.459);
+    border-radius: 12px;
     text-align: center;
-    text-decoration: none;
     font-size: 100%;
-    border: 0.4vh solid black;
-    margin: 1.2vh;
+    border: 2px solid black;
+    margin-left: 4px;
   }
  
   .btn:hover {
-    background-color: green
+    background-color: #1d665f
   }
  
   .btn:active {
@@ -380,5 +378,14 @@ h2 {
   }
 
   .inputpopup{
-    border: 0.4vh solid black;
+    border: 2px solid black;
+    border-radius: 13px;
+ }
+
+ .fas {
+    cursor: pointer;
+ }
+
+ input{
+    cursor: pointer;
  }
