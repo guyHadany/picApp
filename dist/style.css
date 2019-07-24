@@ -8,6 +8,16 @@
   }
   
 
+  @keyframes slide-box-content {
+    from {
+      margin-bottom: -10%;
+    }
+    to {
+      margin-bottom: 0;
+    }
+  }
+
+
 
 body {
     /* background-image: url("f.jpg");
@@ -18,13 +28,15 @@ body {
     margin-top: 0%;
     animation-name: slide-from-bottom;
     animation-duration: 2s;
-
 }
 
 .title{
     font-size: 4vw;
     text-align: center;
     font-family: 'Darker Grotesque', sans-serif;
+    display: inline;
+    margin-left: 29px;
+    
 }
 
 .inputPart{
@@ -44,25 +56,28 @@ body {
 }
 
 .picturs {
-    background-color: rgb(211, 211, 201);
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "u b p";
     border-radius: 0.5vh;
-    background-color:  rgba(247, 247, 247, 0.603)
+    
 }
 
 .unsplash{
-grid-area: u;
+    grid-area: u;
+    display: none;
 }
 
 .pexels{
     grid-area: p;
+    display: none;
 }
 
 .pixabay{
     grid-area: b;
+    display: none;
 }
 
 .picturs{
@@ -70,48 +85,59 @@ grid-area: u;
 }
 
 .img{
-    width: 28.4vw;
+    width: 30.4vw;
     height: 80%;
     margin: 1vh;
+    border-radius: 2px;
 }
 
 .pic{
     position: relative; 
 }
 
-.pic .content {
+.content {
+    display: none;
     position: absolute;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
-    width: 87%;
-    margin-bottom: 2.5%;
-    margin-left: 6.5%;
+    width: 93.1%;
+    margin-bottom: 1.8vh;
+    margin-left: 3.5%;
+    overflow-x: hidden;
 }
 
-.fa-heart {
-    font-size: 2.0vw;
-}
 
-.fa-arrow-circle-down{
-    font-size: 2.0vw;
-    color: rgb(74, 221, 74)
-}
+
 
 .content2{
     display: flex;
     height: 50px;
     justify-content: space-between;
+    margin-bottom: 0%;
+    animation-name: slide-box-content;
+    animation-duration: 1s;
+    overflow-x: hidden
+   
 }
+
+
+.fa-arrow-circle-down{
+    color: rgb(18, 224, 180)
+}
+
 
 .save {
-    margin-top: 3%;
-    
+    margin-top: 2%;
+    font-size: 1.7vw;
+    margin-right: 18px;
 }
 
+
 .link{
-    margin-top: 3%;
-    margin-right: 1px;
+    margin-top: 2%;
+    margin-right: 9px;
+    font-size: 1.7vw;
 }
 
 
@@ -121,14 +147,143 @@ grid-area: u;
 
 
 .credit{
-    font-size: 1.2vw;
-    margin-top: 4%;
+    font-size: 90%;
+    margin-top: 6%;
     margin-left: 1%;
 }
 
 .likes {
-    margin-left: 19%;
-    font-size: 1.3vw;
-    margin-top: 1.5vh;
-    margin-right: 8px;
+    margin-left: 15%;
+    font-size: 1.2vw;
+    margin-top: 3%;
+    margin-right: 12px;
+}
+
+
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+.header {
+    /* position: sticky;
+    z-index: 1;
+    top: 0; */
+    background-image: linear-gradient(to top, rgba(255,0,0,0), #043732);
+    padding-bottom: 1%;
+}
+
+.favorite {
+    display: inline;
+    font-size: 23px;
+    font-family: 'Darker Grotesque', sans-serif;
+    border: 2px solid black;
+    border-radius: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    float: right;
+    margin-right: 35px;
+    margin-top: 31px;
+    padding-bottom: 2px;
+}
+
+.favorite:hover {
+    background-color:  rgb(255, 255, 255)
+}
+
+.fa-search {
+    font-size: 32px;
+    margin-left: 10px;
+}
+
+.underTitle {
+    text-align: center;
+    font-family: 'Darker Grotesque', sans-serif;
+    margin-bottom: 15px;
+    font-size: 42px;
+}
+
+
+.popUp {
+    position: relative;
+    z-index: 100;
+    
+    
+}
+
+.popUp-input{
+    position: relative;
+    z-index: 100;
+}
+
+#popupBox{
+    background-color: white;
+    width: 43vw;
+    position: fixed;
+    top: 18vh;
+    left: 27vw;
+    padding-bottom: 14px;
+    border-radius: 28px;
+}
+
+.projects{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+     "a a a";
+    border-radius: 0.5vh;
+    margin: 13px;
+}
+
+
+
+#popupTitle{
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+.creatPro{
+    display: inline;
+    font-size: 22px;
+    font-family: 'Darker Grotesque', sans-serif;
+    border: 2px solid black;
+    border-radius: 19px;
+    padding-left: 10px;
+    padding-right: 12px;
+    font-weight: bold;
+    margin-right: 5%;
+    padding-bottom: 2px;
+    float: right;
+    margin-bottom: 3%;
+}
+
+.close{
+    margin-right: 1%;
+    font-size: 25px;
+    float: right;
+}
+
+.headerPopup{
+    margin: 25px;
+}
+
+.project{
+    background-color: #00BCD4;
+    height: 150px;
+    margin: 9px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 24px;
+}
+
+.inputpop{
+    margin: 20px;
+    padding-left: 36px;
 }

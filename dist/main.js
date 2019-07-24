@@ -13,6 +13,10 @@ let searchPic =  async function(keyword) {
  
  // input click 
  $(".searchButton").on("click", async function () {
+     $(".unsplash").css("display", "block")
+     $(".pexels").css("display", "block")
+     $(".pixabay").css("display", "block")
+
      let keyword = $(".input").val();
      await searchPic(keyword)
      $(".input").val('')
@@ -22,7 +26,7 @@ let searchPic =  async function(keyword) {
 //save click
 $(".picturs").on("click", ".save",  function () {
     let picId = $(this).closest(".picBox").attr("id")
-    console.log(picId);
+    // console.log(picId);
     picmanager.savePic(picId)
 
 
@@ -56,3 +60,36 @@ input.addEventListener("keyup", function(event) {
    document.getElementById("myBtn").click();
   }
 });
+
+
+
+// pic box hover
+       $(".picturs").on( "mouseenter", ".picBox", function() {
+        $(this).closest(".picBox").find( ".content" ).css( "display", "block");
+    });
+
+    $(".picturs").on( "mouseleave", ".picBox", function() {
+        $(this).closest(".picBox").find( ".content" ).css( "display", "none");
+    });
+      
+
+
+// Pop Up 
+$(".picturs").on("click", ".fa-plus-circle",  function () {
+    let data = {project: "elevation"}
+    let picId = $(this).closest(".picBox").attr("id")
+    console.log(picId);
+    renderer.renderPopup(data)
+
+})
+
+
+
+$(".popUp").on("click", ".close",  function () {
+    renderer.removePopup()
+})
+
+
+$(".popUp").on("click", ".creatPro",  function () {
+    $(".popUp-input").append("<div class='inputpop'><input type='text'><button>click</button></div>");
+})
