@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PicApp</title>
+   
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Darker+Grotesque|Knewave|Source+Sans+Pro&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/14a3d3d526.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Maven+Pro|Montserrat|Pacifico|Shadows+Into+Light&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-
+    <div class="popUp"></div>
     <div id="container">
         <div class="header"> 
-            <div class="favorite"><i class="fas fa-heart"></i></div>
+            
             <div class="title">PicApp</div>
+            <div class="favorite"> Your Projects</div>
+            <div class="underTitle">Pick your images in one App</div>
             <div class="inputPart">
                 <input class= "input" type="text" id="myInput" placeholder="Search Picturs...">
                     <span id="myBtn" class="searchButton"><i class="fas fa-search"></i> </span>
                 </div>
         </div>
         <div class="picturs">
-            <div class="unsplash">Unsplash<div class="unsplashBox"></div></div>
-            <div class="pexels">Pexels<div class="pexelsBox"></div></div>
-            <div class="pixabay">Pixabay<div class="pixabayBox"></div></div>
+            <div class="unsplash"><h2>Unsplash</h2><div class="unsplashBox"></div></div>
+            <div class="pexels" ><h2>Pexels</h2><div class="pexelsBox"></div></div>
+            <div class="pixabay"><h2>Pixabay</h2><div class="pixabayBox"></div></div>
         </div>
     </div>
 
@@ -38,13 +42,13 @@
              <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
                 <div class="content">
                 <div class="content2">  
-                <div class="credit">Credit: {{photographer}}</div>&nbsp; 
-                <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>&nbsp;
-                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>&nbsp;
+                <div class="credit">Credit: {{photographer}}</div>
+                <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>
+                <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
                     {{#if isSaved}}
-                    <div class="remove"><i class="fas fa-heart"></i></div>&nbsp;
+                    <div class="remove"><i class="fas fa-minus-circle"></i> </div>
                     {{else}}
-                    <div class="save"><i class="far fa-heart"></i></div>&nbsp;
+                    <div class="save"><i class="fas fa-plus-circle"></i></div>
                     {{/if}}
                 </div>
                 </div>
@@ -56,27 +60,28 @@
 
 
     
-    <script id="favorite-template" type="text/x-handlebars-template">
-        {{#each data}}
-         <div class="picBox">
-             <div class="pic"><img src="{{smallUrl}}" alt="picture" height="200px" width="200px"></div>
-             <div class="likes">{{likes}}</div>
-             <div class="credit">{{photographer}}</div>
-             <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
-            
-                 {{#if isSaved}}
-                 <div class="remove"><i class="fas fa-heart"></i></div>
-                 {{else}}
-                <div class="saver"><i class="far fa-heart"></i></div>
-                {{/if}}  
+    <script id="popup-template" type="text/x-handlebars-template">
+        <div id="popupBox">
+            <div class="headerPopup">
+                <div id="popupTitle">Save to Project</div>
+                <span class="close"><i class="fas fa-times"></i></span>
             </div>
-        </div>
-       {{/each}}
+                <div class="projects">
+                    <div class="project">project1</div>
+                    <div class="project">project2</div>
+                    <div class="project">project3</div>
+                    <div class="project">project4</div>
+
+                    <div class="project">project4</div>
+                </div>
+                <div class="creatPro">Creat Project</div>
+                <div class="popUp-input"></div>
+            </div>
     </script>
 
 
 
-    
+   
         <script src="jquery/dist/jquery.js"></script>
         <script src="handlebars/dist/handlebars.js"></script>
         <script src="pictureManager.js"></script>

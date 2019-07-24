@@ -3,7 +3,6 @@ class PicManager {
         this.unsplashPics = []
         this.pexelsPics = []
         this.pixabayPics = []
-
         this.savedPics = []
     }
     //Passes a keyword to the pics GET routh and expects some picsObjects to push into the unsplashPics array
