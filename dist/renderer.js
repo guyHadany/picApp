@@ -4,6 +4,8 @@ class Render {
         $('.unsplashBox').empty()
         $('.pexelsBox').empty()
         $('.pixabayBox').empty()
+        $('.projectAlbum').remove()
+
 
         const source = $('#unsplash-template').html();
         const template = Handlebars.compile(source);

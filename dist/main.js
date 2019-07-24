@@ -24,7 +24,7 @@ let searchPic =  async function(keyword) {
  
    });
 
-//save input pop up 
+// save input pop up 
 $(".popUp").on("click", ".saveProject", async function () {
     let projectName = $(".inputpopup").val();
     $(".inputpopup").val('')
@@ -33,6 +33,30 @@ $(".popUp").on("click", ".saveProject", async function () {
     renderer.renderPopup(namesArr)
 
  });
+
+//  $(".popUp").on("click", ".saveProject", async function () {
+//     let projectName =$(".inputpopup").val();
+//     console.log(projectName)
+//     if(!projectName){
+//         $(".inputpopup").val('')
+//     alert("must enter somthing")
+//     }
+//     else{
+//     $(".inputpopup").val('')
+//     await picmanager.savePic(picId, projectName)
+//     let namesArr = await picmanager.getProjectName()
+//     renderer.renderPopup(namesArr)
+//     }
+//    });
+
+
+
+
+
+
+
+
+
 
 
  //clivc delete from DB
@@ -96,7 +120,10 @@ $(".popUp").on("click", ".close",  function () {
 
 
 $(".popUp").on("click", ".creatPro",  function () {
-    $(".popUp-input").append("<div class='inputpop'><input class='inputpopup' type='text'><button class='saveProject'>click</button></div>");
+    // $("inputpop").remove()
+    // $("popUp-input").empty()
+    
+    $(".popUp-input").append("<div class='inputpop'><input class='inputpopup w3-hover-blue' placeholder='Name your project' type='text'><button class='btn saveProject'>click</button></div>");
 })
 
 
@@ -105,3 +132,6 @@ $(".popUp").on("click", ".project",  function () {
     picmanager.addToProject( projectName, picId)
  
 })
+
+
+
