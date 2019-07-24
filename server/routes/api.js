@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 // const request = require('request')
-const Photo = require('../models/Picture')
+const Picture = require('../models/Picture')
 const request = require('request-promise')
 
 
@@ -73,8 +73,7 @@ router.get('/pics/:keyWord', function (req, res) {
 
 
 router.post('/pic', function (req, res) {
-    let data = req.body
-    let picture = new Picture(data)
+    let picture = new Picture(req.body)
     picture.save()
     res.end()
 })
