@@ -20,10 +20,10 @@
 
 
 body {
-    /* background-image: url("f.jpg");
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed; */
+    background-attachment: fixed;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), #06332f4a);
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 0%;
     animation-name: slide-from-bottom;
@@ -33,9 +33,10 @@ body {
 .title{
     font-size: 4vw;
     text-align: center;
-    font-family: 'Darker Grotesque', sans-serif;
+    font-family: 'Nanum Brush Script', cursive;
     display: inline;
     margin-left: 29px;
+    color: white;
     
 }
 
@@ -110,6 +111,8 @@ body {
 
 
 
+
+
 .content2{
     display: flex;
     height: 50px;
@@ -131,6 +134,11 @@ body {
     margin-top: 2%;
     font-size: 1.7vw;
     margin-right: 18px;
+
+}
+
+.save:hover {
+    color: rgb(18, 224, 180)
 }
 
 
@@ -171,7 +179,7 @@ h2 {
     /* position: sticky;
     z-index: 1;
     top: 0; */
-    background-image: linear-gradient(to top, rgba(255,0,0,0), #043732);
+    background-image: linear-gradient(to top, rgba(96, 125, 139, 0), #051816e3);
     padding-bottom: 1%;
 }
 
@@ -179,11 +187,12 @@ h2 {
     display: inline;
     font-size: 23px;
     font-family: 'Darker Grotesque', sans-serif;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 19px;
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bold;
+    color: white;
     float: right;
     margin-right: 35px;
     margin-top: 31px;
@@ -191,12 +200,19 @@ h2 {
 }
 
 .favorite:hover {
-    background-color:  rgb(255, 255, 255)
+    background-image: linear-gradient(to top, rgba(96, 125, 139, 0), #051816e3);
+    
+}
+
+.favorite:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .fa-search {
     font-size: 32px;
     margin-left: 10px;
+    color: white
 }
 
 .underTitle {
@@ -204,6 +220,7 @@ h2 {
     font-family: 'Darker Grotesque', sans-serif;
     margin-bottom: 15px;
     font-size: 42px;
+    color: white;
 }
 
 
@@ -236,6 +253,7 @@ h2 {
      "a a a";
     border-radius: 0.5vh;
     margin: 13px;
+    
 }
 
 
@@ -261,6 +279,16 @@ h2 {
     margin-bottom: 3%;
 }
 
+.creatPro:hover{
+    background-image: linear-gradient(to top, rgba(96, 125, 139, 0), #051816e3);
+}
+
+.creatPro:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
 .close{
     margin-right: 1%;
     font-size: 25px;
@@ -272,8 +300,8 @@ h2 {
 }
 
 .project{
-    background-color: #72fdef;
-    height: 150px;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), #009688);
+    height: 10vw;
     margin: 9px;
     border-radius: 16px;
     display: flex;
@@ -281,7 +309,19 @@ h2 {
     justify-content: center;
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 24px;
+    
 }
+
+.project:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+.project:hover {
+    background-image: linear-gradient(to top, rgba(255,0,0,0), #030808);
+}
+
 
 .inputpop{
     margin: 20px;
@@ -298,4 +338,47 @@ h2 {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 40px;
 }
+
+.projectAlbum:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.projectAlbum:hover {
+    background-image: linear-gradient(to top, rgba(255,0,0,0), #030808);
+}
+
+
+
+
+
+.btn {
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+ 
+    border-radius: 0.7vh;
+    box-shadow: 0 0.5vh rgba(153, 153, 153, 0.459);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5vh;
+    border: 0.4vh solid black;
+    margin: 1.2vh;
+  }
+ 
+  .btn:hover {
+    background-color: green
+  }
+ 
+  .btn:active {
+    box-shadow: 0 0.5vh rgba(102, 102, 102, 0.466);
+    transform: translateY(4px);
+  }
+
+  .inputpopup{
+    border: 0.4vh solid black;
+ }
