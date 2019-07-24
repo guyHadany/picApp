@@ -47,11 +47,8 @@ class PicManager {
 
 
     async getProjectName() {
-        
-      let names = await $.get('/projectsNames')
-      console.log(names);
-      
-       return names
+        let names = await $.get('/projectsNames')
+        return names
     }
 
 

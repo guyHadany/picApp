@@ -62,7 +62,8 @@ $(".popUp").on("click", ".saveProject", async function () {
  //clivc delete from DB
  $(".picturs").on("click", ".remove",  function () {
     let picId = $(this).closest(".picBox").attr("id")
-    picmanager.removePic(picId)
+    console.log(picId)
+    // picmanager.removePic(picId)
 
 })
 
