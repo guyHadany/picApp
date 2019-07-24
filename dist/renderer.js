@@ -28,6 +28,8 @@ class Render {
 
     }
 
+
+
     
 
     renderDB(data) {
@@ -40,6 +42,21 @@ class Render {
     }
 
 
+
+
+
+     renderPopup (data) {
+        const sourcePopup = $('#popup-template').html();
+        const templatePopup = Handlebars.compile(sourcePopup);
+        let newHTML = templatePopup(data);
+        $('.popUp').append(newHTML);
+        $("#container").css({"filter": "blur(8px)","-webkit-filter": "blur(8px)"})
+    }
+ 
+     removePopup(){
+        $(".popUp").empty()
+        $("#container").css({"filter": "blur(0px)","-webkit-filter": "blur(0px)"})
+    }
 
 
 
