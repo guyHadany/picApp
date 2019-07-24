@@ -23,32 +23,33 @@ class Render {
         const template2 = Handlebars.compile(source2);
         const newHTML2 = template2({website: pexels});
         $('.pexelsBox').append(newHTML2);
+    }
 
 
+    renderPName(projectsNames) {
+        $('.unsplashBox').empty()
+        $('.pexelsBox').empty()
+        $('.pixabayBox').empty()
 
+        $(".unsplash").css("display", "none")
+        $(".pexels").css("display", "none")
+        $(".pixabay").css("display", "none")
+        
+        
+        const source3 = $('#favorite-template').html();
+        const template3 = Handlebars.compile(source3);
+        const newHTML3 = template3({projectsNames});
+        $('.pictures').append(newHTML3);
     }
 
 
 
-    
-
-    renderDB(data) {
-        $('.picturs').empty()
-
-        const source = $('#favorite-template').html();
-        const template = Handlebars.compile(source);
-        const newHTML = template({data});
-        $('.picturs').append(newHTML);
-    }
 
 
-
-
-
-     renderPopup (data) {
+     renderPopup (namesArr) {
         const sourcePopup = $('#popup-template').html();
         const templatePopup = Handlebars.compile(sourcePopup);
-        let newHTML = templatePopup(data);
+        let newHTML = templatePopup({namesArr});
         $('.popUp').append(newHTML);
         $("#container").css({"filter": "blur(8px)","-webkit-filter": "blur(8px)"})
     }

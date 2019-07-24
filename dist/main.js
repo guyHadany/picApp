@@ -2,6 +2,7 @@
 const renderer = new Render
 const picmanager = new PicManager
 
+let picId 
 
 
 // add picturs from the input val
@@ -23,14 +24,13 @@ let searchPic =  async function(keyword) {
  
    });
 
-//save click
-$(".picturs").on("click", ".save",  function () {
-    let picId = $(this).closest(".picBox").attr("id")
-    let projectName = "jojo"
-    picmanager.savePic(picId, projectName)
-
-
-
+//save input pop up 
+$(".popUp").on("click", ".saveProject", async function () {
+    let projectName = $(".inputpopup").val();
+    $(".inputpopup").val('')
+    await picmanager.savePic(picId, projectName)
+    let namesArr = await picmanager.getProjectName()
+    renderer.renderPopup(namesArr)
 
  });
 
@@ -38,15 +38,15 @@ $(".picturs").on("click", ".save",  function () {
  //clivc delete from DB
  $(".picturs").on("click", ".remove",  function () {
     let picId = $(this).closest(".picBox").attr("id")
-    tempmanager.removePic(picId)
+    picmanager.removePic(picId)
 
 })
 
 
 
 $(".favorite").on("click", function () {
-    tempmanager.getPicsFromDB()
-    renderer.renderDB(tempmanager.savedPics)
+    //  await picmanager.getPicsFromDB()
+    renderer.renderPName(picmanager.getProjectName())
 
 })
 
@@ -76,12 +76,11 @@ input.addEventListener("keyup", function(event) {
       
 
 
-// Pop Up 
-$(".picturs").on("click", ".fa-plus-circle",  function () {
-    let data = {project: "elevation"}
-    let picId = $(this).closest(".picBox").attr("id")
-    console.log(picId);
-    renderer.renderPopup(data)
+// click on the + and show Pop Up 
+$(".picturs").on("click", ".fa-plus-circle", async function () {
+    picId = $(this).closest(".picBox").attr("id")
+    let namesArr = await picmanager.getProjectName()
+    renderer.renderPopup(namesArr)
 
 })
 
@@ -93,5 +92,12 @@ $(".popUp").on("click", ".close",  function () {
 
 
 $(".popUp").on("click", ".creatPro",  function () {
-    $(".popUp-input").append("<div class='inputpop'><input type='text'><button>click</button></div>");
+    $(".popUp-input").append("<div class='inputpop'><input class='inputpopup' type='text'><button class='saveProject'>click</button></div>");
+})
+
+
+$(".popUp").on("click", ".project",  function () {
+    let projectName = $(this).closest(".project").text()
+    picmanager.addToProject( projectName, picId)
+ 
 })

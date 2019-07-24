@@ -272,7 +272,7 @@ h2 {
 }
 
 .project{
-    background-color: #00BCD4;
+    background-color: #72fdef;
     height: 150px;
     margin: 9px;
     border-radius: 16px;
@@ -286,4 +286,11 @@ h2 {
 .inputpop{
     margin: 20px;
     padding-left: 36px;
+}
+
+
+.projectAlbum{
+    height: 30px;
+    width: 30px;
+    background-color: red
 }
