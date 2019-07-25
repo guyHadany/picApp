@@ -24,6 +24,7 @@ class Render {
     }
 
     renderPName(projectsNames) {
+        $('.projectAlbum').remove()
         $('.picBox').remove()
         $('.PnameEmpty').remove()
         $(".unsplash").css("display", "none")
