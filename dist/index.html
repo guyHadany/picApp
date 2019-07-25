@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,47 @@
     <title>PicApp</title>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Darker+Grotesque|Knewave|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Darker+Grotesque|Knewave|Source+Sans+Pro&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/14a3d3d526.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Maven+Pro|Montserrat|Pacifico|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Comfortaa|Maven+Pro|Montserrat|Pacifico|Shadows+Into+Light&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" href="http://www.russellwebster.com/wp-content/uploads/2013/01/PA-logo-icon-only.jpg">
 </head>
+
 <body>
 
     <div class="popUp"></div>
     <div id="container">
-        <div class="header"> 
-            
+        <div class="header">
+
             <div class="title">PicApp</div>
             <div class="favorite"> Your Projects</div>
             <div class="underTitle">Images from 3 websites in 1 App</div>
             <div class="inputPart">
-                <input class= "input" type="text" id="myInput" placeholder="Search Picturs...">
-                    <span id="myBtn" class="searchButton"><i class="fas fa-search"></i> </span>
-                </div>
-            </div>
-            <div class="projectName"></div>
-            <div class="picturs">
-                <div class="unsplash"><h2>Unsplash</h2><div class="unsplashBox"></div></div>
-                <div class="pexels" ><h2>Pexels</h2><div class="pexelsBox"></div></div>
-                <div class="pixabay"><h2>Pixabay</h2><div class="pixabayBox"></div></div>
+                <input class="input" type="text" id="myInput" placeholder="Search Picturs...">
+                <span id="myBtn" class="searchButton"><i class="fas fa-search"></i> </span>
             </div>
         </div>
+        <div class="projectName"></div>
+        <div class="picturs">
+            <div class="unsplash">
+                <h2>Unsplash</h2>
+                <div class="unsplashBox"></div>
+            </div>
+            <div class="pexels">
+                <h2>Pexels</h2>
+                <div class="pexelsBox"></div>
+            </div>
+            <div class="pixabay">
+                <h2>Pixabay</h2>
+                <div class="pixabayBox"></div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -44,8 +58,12 @@
          <div class="picBox" id="{{apiId}}">
              <div class="pic"><img class="img" src="{{smallUrl}}" alt="picture" height="200px" width="200px">
                 <div class="content">
-                <div class="content2">  
+                <div class="content2"> 
+                {{#if photographer}}
+                <div class="credit"></div>
+                {{else}}
                 <div class="credit">Credit: {{photographer}}</div>
+                {{/if}}
                 <div class="likes"><i class="fas fa-thumbs-up"></i> {{likes}}</div>
                 <div class="link"><a href={{webURL}}><i class="fas fa-arrow-circle-down"></i></a></div>
                     {{#if isSaved}}
@@ -83,7 +101,7 @@
 
 
 
-    
+
     <script id="popup-template" type="text/x-handlebars-template">
         <div id="popupBox">
             <div class="headerPopup">
@@ -101,18 +119,19 @@
     </script>
 
     <script id="favorite-template" type="text/x-handlebars-template">
-        
+
                     {{#each projectsNames}}
                     <div class="projectAlbum">{{this}}</div>
                     {{/each}}
               
     </script>
 
-   
-        <script src="jquery/dist/jquery.js"></script>
-        <script src="handlebars/dist/handlebars.js"></script>
-        <script src="pictureManager.js"></script>
-        <script src="renderer.js"></script>
-        <script src="main.js"></script>
+
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="handlebars/dist/handlebars.js"></script>
+    <script src="pictureManager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
