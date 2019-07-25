@@ -366,6 +366,7 @@ h2 {
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 40px;
     cursor: pointer;
+    padding-left: 20%;
 }
 
 .projectAlbum:active {
@@ -411,11 +412,29 @@ h2 {
  input{
     cursor: pointer;
  }
+
+
+ .projectName{
+     color: rgb(29, 28, 28)
+ }
+
+ .deleteProject {
+    display: flex;
+    height: 54px;
+    justify-content: space-between;
+    overflow-x: hidden;
+    color: #343131;
+    font-size: 2.2vw;
+    padding-left: 80px;
+    margin-top: 10%;
+ }
+ 
  .PnameEmpty{
     text-align: center;
-    font-family: ‘Darker Grotesque’, sans-serif;
+    font-family: "Darker Grotesque", sans-serif;
     margin-bottom: 15px;
     font-size: 50px;
     color: rgb(133, 128, 128);
     font-weight: bold
+
  }
