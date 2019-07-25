@@ -1,6 +1,7 @@
 class Render {
 
     renderData(unsplash, pixabay, pexels) {
+        $('.boxName').remove()
         $('.unsplashBox').empty()
         $('.pexelsBox').empty()
         $('.pixabayBox').empty()
@@ -39,6 +40,7 @@ class Render {
     }
 
     renderProject(pictures) {
+        $('.boxName').remove()
         $('.projectAlbum').remove()
         $('.picBox').remove()
         $('.PnameEmpty').remove()
