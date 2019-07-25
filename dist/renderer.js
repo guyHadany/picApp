@@ -5,7 +5,7 @@ class Render {
         $('.pexelsBox').empty()
         $('.pixabayBox').empty()
         $('.projectAlbum').remove()
-
+        $('.PnameEmpty').remove()
 
         const source = $('#all-template').html();
         const template = Handlebars.compile(source);
@@ -23,10 +23,9 @@ class Render {
         $('.pexelsBox').append(newHTML2);
     }
 
-
     renderPName(projectsNames) {
         $('.picBox').remove()
-
+        $('.PnameEmpty').remove()
         $(".unsplash").css("display", "none")
         $(".pexels").css("display", "none")
         $(".pixabay").css("display", "none")
@@ -40,16 +39,12 @@ class Render {
     renderProject(pictures) {
         $('.projectAlbum').remove()
         $('.picBox').remove()
-        
+        $('.PnameEmpty').remove()
         const source3 = $('#project-template').html();
         const template3 = Handlebars.compile(source3);
         const newHTML3 = template3({website: pictures});
         $('.picturs').append(newHTML3);
     }
-
-
-
-
 
      renderPopup (namesArr) {
         const sourcePopup = $('#popup-template').html();
@@ -63,8 +58,4 @@ class Render {
         $(".popUp").empty()
         $("#container").css({"filter": "blur(0px)","-webkit-filter": "blur(0px)"})
     }
-
-
-
-
 }

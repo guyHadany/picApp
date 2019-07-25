@@ -144,6 +144,13 @@ router.delete('/pic/:picId/:project', function (req, res) {
 
 })
 
+router.delete('/project/:projectName', function(req, res){
+    let projectName = req.params.projectName
+    Project.findOneAndRemove({name: projectName}, function(err, project){
+        res.end()
+    })
+})
+
 
 module.exports = router
 

@@ -32,43 +32,26 @@ $(".popUp").on("click", ".saveProject", async function () {
     let namesArr = await picmanager.getProjectName()
     renderer.renderPopup(namesArr)
     $(".inputpop").remove()
-    // $("popUp-input").empty()
 
  });
 
-//  $(".popUp").on("click", ".saveProject", async function () {
-//     let projectName =$(".inputpopup").val();
-//     console.log(projectName)
-//     if(!projectName){
-//         $(".inputpopup").val('')
-//     alert("must enter somthing")
-//     }
-//     else{
-//     $(".inputpopup").val('')
-//     await picmanager.savePic(picId, projectName)
-//     let namesArr = await picmanager.getProjectName()
-//     renderer.renderPopup(namesArr)
-//     }
-//    });
+
+$(".pictures").on("click", ".fa-trash-alt",  async function () {
+    let projectName = $(this).closest(".projectAlbum").text()
+    await picmanager.removeProject(projectName)
+    let projectsNames = await picmanager.getProjectName()
+    renderer.renderPName(projectsNames)
+
+})
 
 
-
-
-
-
-
-
-
-
-
- //clivc delete from DB
+ //delete from DB
  $(".picturs").on("click", ".remove",  async function () {
     let picId = $(this).closest(".picBox").attr("id")
     let projectName = $(this).closest("#container").find(".Pname").text()
     await picmanager.removePic(picId, projectName)
     let pictures = await picmanager.getProjectPics(projectName)
     renderer.renderProject(pictures)
-    // picmanager.removePic(picId)
 
 })
 
@@ -85,6 +68,9 @@ $(".picturs").on("click", ".projectAlbum", async function () {
     let projectName = $(this).closest(".projectAlbum").text()
     let pictures = await picmanager.getProjectPics(projectName)
     renderer.renderProject(pictures)
+    if (pictures.length == 0) {
+        $(".picturs").prepend(`<span class="PnameEmpty"></span><span class="PnameEmpty">${projectName} project folder is empty</span>`)
+    }
     $(".projectName").prepend(`<span class="Pname">${projectName}</span>`)
 })
 

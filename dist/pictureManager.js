@@ -53,6 +53,16 @@ class PicManager {
     
     }
 
+    removeProject(projectName){
+        $.ajax({
+            type: "DELETE",
+            url: `/project/${projectName}`,
+            success: function(result) {
+                console.log(result)
+            }
+        })
+    }
+
 
 
     async getProjectName() {
