@@ -24,6 +24,7 @@ class Render {
     }
 
     renderPName(projectsNames) {
+        $('.boxName').remove()
         $('.projectAlbum').remove()
         $('.picBox').remove()
         $('.PnameEmpty').remove()

@@ -36,14 +36,16 @@ $(".popUp").on("click", ".saveProject", async function () {
  });
 
 
-// $(".picturs").on("click", ".deleteProject",  async function () {
+$(".picturs").on("click", ".deleteProject",  async function () {
 
-//     let projectName = $(this).closest(".projectAlbum").text()
-//     await picmanager.removeProject(projectName)
-//     let projectsNames = await picmanager.getProjectName()
-//     renderer.renderPName(projectsNames)
+    let projectName = $(this).closest(".boxName").find(".projectAlbum").text()
+    console.log(projectName);
+    
+    await picmanager.removeProject(projectName)
+    let projectsNames = await picmanager.getProjectName()
+    renderer.renderPName(projectsNames)
 
-// })
+})
 
 
  //delete from DB
