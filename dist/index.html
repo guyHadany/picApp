@@ -112,8 +112,10 @@
     <script id="favorite-template" type="text/x-handlebars-template">
         
                     {{#each projectsNames}}
-                    
-                    <div class="projectAlbum">{{this}}<span class="deleteProject"><i class="fas fa-trash-alt"></i></span></div>
+                    <div class="boxName">
+                        <div class="projectAlbum">{{this}}</div>
+                        <div class="deleteProject"><i class="fas fa-trash-alt"></i></div>
+                    </div>
                     {{/each}}
               
     </script>
