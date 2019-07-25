@@ -36,22 +36,28 @@ class PicManager {
         this.savedPics = PicsFromDB
     }
     //makes a DELETE request to pic routh with the picture id (apiId) as an argument, and then calls getPicsFromDB to rerander the page with the new changes
-    async removePic(picId) {
+    async removePic(picId, projectName) {
+        let picInfo 
+        if (this.savedPics.find(p => p.apiId == picId)) {
+            picInfo = this.savedPics.find(p => p.apiId == picId)
+        } 
+        let id = picInfo._id
+    
         await $.ajax({
             type: "DELETE",
-            url: `/pic/${picId}`,
+            url: `/pic/${id}/${projectName}`,
+            success: function(result) {
+                console.log(result)
+            }
         })
-        await this.getPicsFromDB()
+    
     }
 
 
 
     async getProjectName() {
-        
-      let names = await $.get('/projectsNames')
-      console.log(names);
-      
-       return names
+        let names = await $.get('/projectsNames')
+        return names
     }
 
 
@@ -76,6 +82,8 @@ class PicManager {
 
     async getProjectPics(projectName){
         let pictures = await $.get(`/project/${projectName}`)
+        this.savedPics = pictures
+        
         return pictures
     }
 
